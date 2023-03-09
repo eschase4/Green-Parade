@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS playlist_db;
-CREATE DATABASE playlist_db;
+DROP DATABASE IF EXISTS google_books;
+CREATE DATABASE google_books;
