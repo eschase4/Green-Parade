@@ -16,7 +16,7 @@ router.get('/search/:searchTerm', authChecker, async (req, res) => {
   const { searchTerm } = req.params;
 
   const googleBookResponse =
-    await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}
+    await axios.get(` https://api.spotify.com/${searchTerm}
   `);
 
   const books = googleBookResponse.data.items.map((book) => ({
