@@ -29,3 +29,8 @@ const expressSessionConfig = {
     db: sequelize,
   }),
 };
+
+module.exports = {
+  sequelize,
+  expressSessionConfig,
+};
