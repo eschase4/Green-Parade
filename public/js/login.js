@@ -28,7 +28,7 @@ async function handleSignup(event) {
     console.log('Dan, you screwed it up again');
   }
 
-  signupForm.reset();
+  // signupForm.reset();
 }
 
 async function handleLogin(event) {
@@ -56,7 +56,7 @@ async function handleLogin(event) {
     console.log('Dan, you screwed it up again');
   }
 
-  loginForm.reset();
+  // loginForm.reset();
 }
 
 signupForm.addEventListener('submit', handleSignup);
