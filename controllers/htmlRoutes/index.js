@@ -18,7 +18,7 @@ router.get('/search/:searchTerm', authChecker, async (req, res) => {
 
   const options = {
     method: 'GET',
-    url: `https://deezerdevs-deezer.p.rapidapi.com/artist/${searchTerm}`,
+    url: `https://deezerdevs-deezer.p.rapidapi.com/artist/adele`,
     headers: {
       'X-RapidAPI-Key': 'ad5b30d7f0msh951a6816b6e5b25p1e1d8ejsn505eec47fad7',
       'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com',
