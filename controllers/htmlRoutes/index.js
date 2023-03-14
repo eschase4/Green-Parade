@@ -36,7 +36,7 @@ router.get('/search/:searchTerm', async (req, res) => {
   // if (deezerResponse.data.data.type === 'track') {
   const tracks = deezerResponse.data.data.map((track) => ({
     id: track.id,
-    songname: track.title,
+    songName: track.title,
     image: track.artist.picture,
     artistName: track.artist.name,
   }));
