@@ -25,7 +25,7 @@ async function handleSignup(event) {
   if (response.ok) {
     console.log('IT WORKED!');
   } else {
-    console.log('Dan, you screwed it up again');
+    console.log('Eli, you screwed it up again');
   }
 
   // signupForm.reset();
