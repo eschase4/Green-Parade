@@ -1,12 +1,12 @@
 <div class="container">
 <div class="row">
 
-{{#each artistObj}}
+{{#each tracks}}
 <div class="card col-3" style="width: 18rem;">
   <img src={{this.image}} class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{this.name}}</h5>
-    <p class="card-text">{{this.type}}</p>
+    <h5 class="card-title">{{this.songName}}</h5>
+    <p class="card-text">{{this.artistName}}</p>
   </div>
 </div>
 {{/each}}

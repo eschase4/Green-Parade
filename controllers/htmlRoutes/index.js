@@ -2,8 +2,6 @@ const axios = require('axios');
 const router = require('express').Router();
 // const { authChecker } = require('../../utils/authChecker');
 
-// I BROKE THE AUTH, MAKE SURE TO COMMENT IT BACK IN
-
 router.get('/', async (req, res) => {
   res.render('home', {
     loggedIn: req.session.loggedIn,
@@ -14,7 +12,7 @@ router.get('/login', async (req, res) => {
   res.render('login');
 });
 
-// 2:02:00 in dan video, and/or check github to see how dan put the authChecker in
+// 2:02:00 in dan video
 router.get('/search/:searchTerm', async (req, res) => {
   // authChecker,
   const { searchTerm } = req.params;
@@ -29,22 +27,30 @@ router.get('/search/:searchTerm', async (req, res) => {
     },
   };
 
-  const deezerResponse = await axios
-    .request(options)
-    .then((response) => response.data)
-    .catch((error) => {
-      console.error(error);
-    });
+  const deezerResponse = await axios.request(options);
+  // .then((response) => response.data)
+  // .catch((error) => {
+  // console.error(error);
+  // });
+  // if (deezerResponse.data.data.type === 'track') {
+  const tracks = deezerResponse.data.data.map((track) => ({
+    id: track.id,
+    songname: track.title,
+    image: track.artist.picture,
+    artistName: track.artist.name,
+  }));
 
-  const artistObj = {
-    id: deezerResponse.data.id,
-    name: deezerResponse.data.artist.name,
-    image: deezerResponse.data.artist.picture,
-    type: deezerResponse.type,
-  };
-  console.log(artistObj, 'hEY IT ME');
+  // const tracks = deezerResponse.map((track) => ({
+  //   id: track.id,
+  //   songname: track.title,
+  //   image: track.artist.picture,
+  //   artistName: track.artist.name,
+  // }));
+
+  // const trackObj = {};
+  console.log(tracks, 'hEY IT ME');
   res.render('search', {
-    artistObj,
+    tracks,
   });
 });
 
