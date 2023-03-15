@@ -1,6 +1,6 @@
 const axios = require('axios');
 const router = require('express').Router();
-// const { authChecker } = require('../../utils/authChecker');
+const { authChecker } = require('../../utils/authChecker');
 
 router.get('/', async (req, res) => {
   res.render('home', {
@@ -13,7 +13,7 @@ router.get('/login', async (req, res) => {
 });
 
 // 2:02:00 in dan video
-router.get('/search/:searchTerm', async (req, res) => {
+router.get('/search/:searchTerm', authChecker, async (req, res) => {
   // authChecker,
   const { searchTerm } = req.params;
 
@@ -28,27 +28,15 @@ router.get('/search/:searchTerm', async (req, res) => {
   };
 
   const deezerResponse = await axios.request(options);
-  // .then((response) => response.data)
-  // .catch((error) => {
-  // console.error(error);
-  // });
-  // if (deezerResponse.data.data.type === 'track') {
+
   const tracks = deezerResponse.data.data.map((track) => ({
     id: track.id,
     songName: track.title,
-    image: track.artist.picture,
+    image: track.album.cover_medium,
     artistName: track.artist.name,
   }));
 
-  // const tracks = deezerResponse.map((track) => ({
-  //   id: track.id,
-  //   songname: track.title,
-  //   image: track.artist.picture,
-  //   artistName: track.artist.name,
-  // }));
-
-  // const trackObj = {};
-  console.log(tracks, 'hEY IT ME');
+  console.log(tracks);
   res.render('search', {
     tracks,
   });
