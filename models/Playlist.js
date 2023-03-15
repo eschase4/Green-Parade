@@ -18,10 +18,10 @@ Playlist.init(
         key: 'id',
       },
     },
-    songs: {
+    song_ids: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'songs',
+        model: 'song',
         key: 'id',
       },
     },
@@ -31,7 +31,7 @@ Playlist.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'songs',
+    modelName: 'playlist',
   }
 );
 
