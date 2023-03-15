@@ -1,6 +1,6 @@
 const axios = require('axios');
 const router = require('express').Router();
-// const { authChecker } = require('../../utils/authChecker');
+const { authChecker } = require('../../utils/authChecker');
 
 router.get('/', async (req, res) => {
   res.render('home', {
@@ -13,7 +13,7 @@ router.get('/login', async (req, res) => {
 });
 
 // 2:02:00 in dan video
-router.get('/search/:searchTerm', async (req, res) => {
+router.get('/search/:searchTerm', authChecker, async (req, res) => {
   // authChecker,
   const { searchTerm } = req.params;
 
@@ -36,7 +36,7 @@ router.get('/search/:searchTerm', async (req, res) => {
     artistName: track.artist.name,
   }));
 
-  console.log(tracks, 'hEY IT ME');
+  console.log(tracks);
   res.render('search', {
     tracks,
   });
