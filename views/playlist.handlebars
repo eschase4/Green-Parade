@@ -1,0 +1,15 @@
+<div class="container">
+<div class="row">
+{{!-- needs work below --}}
+{{#each Song}}
+<div class="card col-3" style="width: 18rem;">
+  <img src={{this.image}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{this.songName}}</h5>
+    <h6 class="card-text">{{this.artistName}}</h6>
+    <button type="button" onclick="">Add Song</button>
+  </div>
+</div>
+{{/each}}
+</div>
+</div>
