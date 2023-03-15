@@ -14,6 +14,7 @@
     "axios": "^1.3.4",
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
+    "discogs-marketplace-api-nodejs": "^1.6.1",
     "dotenv": "^16.0.3",
     "eslint-config-wesbos": "^3.2.3",
     "express": "^4.18.2",
