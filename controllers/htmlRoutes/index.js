@@ -19,7 +19,6 @@ router.get('/search/:searchTerm', async (req, res) => {
 
   const options = {
     method: 'GET',
-    url: `https://deezerdevs-deezer.p.rapidapi.com/artist/adele`,
     url: `https://deezerdevs-deezer.p.rapidapi.com/search`,
     params: { q: `${searchTerm}` },
     headers: {
