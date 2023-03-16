@@ -26,7 +26,7 @@ async function handleSignup(event) {
     console.log('IT WORKED!');
     window.location.replace('/');
   } else {
-    console.log('Eli, you screwed it up again');
+    console.log('There was an error signing up!');
   }
 
   signupForm.reset();
@@ -55,7 +55,7 @@ async function handleLogin(event) {
     alert('login succesful');
     window.location.replace('/');
   } else {
-    console.log('Dan, you screwed it up again');
+    console.log('There was a problem logging in!');
     alert('Username or Password is incorrect');
   }
 
