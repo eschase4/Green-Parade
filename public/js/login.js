@@ -24,11 +24,12 @@ async function handleSignup(event) {
 
   if (response.ok) {
     console.log('IT WORKED!');
+    window.location.replace('/');
   } else {
     console.log('Eli, you screwed it up again');
   }
 
-  // signupForm.reset();
+  signupForm.reset();
 }
 
 async function handleLogin(event) {
@@ -51,12 +52,14 @@ async function handleLogin(event) {
   });
 
   if (response.ok) {
-    console.log('IT WORKED!');
+    alert('login succesful');
+    window.location.replace('/');
   } else {
     console.log('Dan, you screwed it up again');
+    alert('Username or Password is incorrect');
   }
 
-  // loginForm.reset();
+  loginForm.reset();
 }
 
 signupForm.addEventListener('submit', handleSignup);

@@ -12,6 +12,11 @@ router.get('/login', async (req, res) => {
   res.render('login');
 });
 
+router.get('/playlist', async (req, res) => {
+  console.log(res);
+  res.render('playlist');
+});
+
 // 2:02:00 in dan video
 router.get('/search/:searchTerm', authChecker, async (req, res) => {
   // authChecker,
