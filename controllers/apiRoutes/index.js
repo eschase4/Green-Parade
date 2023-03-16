@@ -13,23 +13,23 @@ router.post('/login', async (req, res) => {
     if (!dbUser) {
       return res
         .status(404)
-        .json({ message: "Get outta here. I don't know you" });
+        .json({ message: "User not found!" });
     }
 
     const isValidPassword = await dbUser.comparePassword(req.body.password);
 
     if (!isValidPassword) {
-      return res.status(404).json({ message: 'Wrong password' });
+      return res.status(404).json({ message: 'Incorrect Password!' });
     }
 
     req.session.save(() => {
       req.session.loggedIn = true;
       return res
         .status(200)
-        .json({ message: "You're the best. I'm so proud of you!" });
+        .json({ message: "You have logged in succesfully!" });
     });
   } catch (error) {
-    return res.status(500).json({ message: 'You screwed it up' });
+    return res.status(500).json({ message: 'There was a problem logging in!' });
   }
 });
 
@@ -43,7 +43,7 @@ router.post('/signup', async (req, res) => {
       res.status(201).json(plainUser);
     });
   } catch (error) {
-    res.status(500).json({ message: 'You screwed it up' });
+    res.status(500).json({ message: 'There was an error signing up!' });
   }
 });
 
