@@ -16,4 +16,4 @@ const playlistData = [
 ];
 const seedPlaylist = () => Playlist.bulkCreate(playlistData);
 
-// module.exports = seedPlaylist;
+module.exports = seedPlaylist;
