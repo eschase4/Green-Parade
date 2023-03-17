@@ -1,4 +1,5 @@
 <div class="container">
+
 <div class="row">
 
 {{#each tracks}}
@@ -8,8 +9,22 @@
     <h5 class="card-title bg-dark">{{this.songName}}</h5>
     <h6 class="card-text bg-dark">{{this.artistName}}</h6>
     <button type="button bg-success" onclick="">Add Song</button>
+
+  <div class="row">
+    {{#each tracks}}
+    <div class="randomstuff card col-3" style="width: 18rem;">
+      <form method="post" id="newSongData">
+        <img src={{this.image}} class="card-img-top" alt="..." id="albumArt">
+          <div class="card-body">
+            <h5 class="card-title" id="songName">{{this.songName}}</h5>
+            <h6 class="card-text" id="artistName">{{this.artistName}}</h6>
+            <button type="button" onclick="" class="addSongBtn">Add Song</button>
+          </div>  
+      </form>
+    </div>
+    {{/each}}
+
   </div>
 </div>
-{{/each}}
-</div>
-</div>
+
+<script src="/js/addSong.js"></script>

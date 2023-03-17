@@ -1,14 +1,9 @@
 const router = require('express').Router();
 const Song = require('../../models');
 
+const addSong = document.querySelector('.addSongBtn');
+console.log(addSong);
 router.get('/', async (req, res) => {});
 
-router.post('/playlist', async (req, res) => {
-  try {
-    const songData = Song.findAll({});
 
-    res.status(200).json(songData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+module.exports = router;
