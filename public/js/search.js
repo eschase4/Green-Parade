@@ -4,7 +4,6 @@ async function handleSubmit(event) {
   event.preventDefault();
 
   const searchTerm = document.querySelector('#search').value.trim();
-  console.log('you are now ');
   window.location.href = `/search/${searchTerm}`;
 }
 
