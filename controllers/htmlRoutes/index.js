@@ -18,7 +18,7 @@ router.get('/playlist', async (req, res) => {
 });
 
 // 2:02:00 in dan video
-router.get('/search/:searchTerm', async (req, res) => {
+router.get('/search/:searchTerm', authChecker, async (req, res) => {
   // authChecker,
   const { searchTerm } = req.params;
 
