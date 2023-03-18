@@ -41,7 +41,6 @@ router.get('/search/:searchTerm', authChecker, async (req, res) => {
     artistName: track.artist.name,
   }));
 
-  console.log(tracks);
   res.render('search', {
     tracks,
   });

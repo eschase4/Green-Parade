@@ -43,7 +43,27 @@ router.post('/signup', async (req, res) => {
       res.status(201).json(plainUser);
     });
   } catch (error) {
-    res.status(500).json({ message: 'You screwed it up' });
+    res.status(500).json({ message: 'There was an error signing up!' });
+  }
+});
+
+// // /api/playlist
+
+router.post('/playlist', async (req, res) => {
+  try {
+    console.info(`${req.method} request received to add a review`);
+    // const songData = Song.findAll({});
+    const { songName, artistName, albumArt } = req.body;
+    const postSongData = {
+      songName,
+      artistName,
+      albumArt,
+    };
+    console.log(postSongData);
+    // res.status(200).json(songData);
+  } catch (err) {
+    console.log('hello, but in error form');
+    res.status(500).json(err);
   }
 });
 
