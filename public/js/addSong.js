@@ -14,6 +14,13 @@ async function newSong(e) {
     artistName,
   };
   console.log(songObj);
+  fetch('/api/playlist', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(songObj),
+  });
 }
 
 addSongBtn.forEach((element) => {
@@ -22,3 +29,4 @@ addSongBtn.forEach((element) => {
 });
 
 // addSongBtn.addEventListener('click', newSong);
+module.exports = newSong;

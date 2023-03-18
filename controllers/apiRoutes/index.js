@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { User, Song } = require('../../models');
+const User = require('../../models');
 
 router.post('/login', async (req, res) => {
   try {
@@ -45,13 +45,20 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-// /api/playlist
+// // /api/playlist
+
 router.post('/playlist', async (req, res) => {
   try {
     console.info(`${req.method} request received to add a review`);
-    const songData = Song.findAll({});
-    console.log('hello');
-    res.status(200).json(songData);
+    // const songData = Song.findAll({});
+    const { songName, artistName, albumArt } = req.body;
+    const postSongData = {
+      songName,
+      artistName,
+      albumArt,
+    };
+    console.log(postSongData);
+    // res.status(200).json(songData);
   } catch (err) {
     console.log('hello, but in error form');
     res.status(500).json(err);
