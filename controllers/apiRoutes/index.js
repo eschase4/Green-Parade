@@ -11,23 +11,25 @@ router.post('/login', async (req, res) => {
     });
 
     if (!dbUser) {
-      return res.status(404).json({ message: 'User not found!' });
+      return res
+        .status(404)
+        .json({ message: "Get outta here. I don't know you" });
     }
 
     const isValidPassword = await dbUser.comparePassword(req.body.password);
 
     if (!isValidPassword) {
-      return res.status(404).json({ message: 'Incorrect Password!' });
+      return res.status(404).json({ message: 'Wrong password' });
     }
 
     req.session.save(() => {
       req.session.loggedIn = true;
       return res
         .status(200)
-        .json({ message: 'You have logged in succesfully!' });
+        .json({ message: "You're the best. I'm so proud of you!" });
     });
   } catch (error) {
-    return res.status(500).json({ message: 'There was a problem logging in!' });
+    return res.status(500).json({ message: 'You screwed it up' });
   }
 });
 
