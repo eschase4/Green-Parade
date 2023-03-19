@@ -25,7 +25,7 @@ router.get('/playlist', async (req, res) => {
       //   },
       // ],
     });
-    console.log(dbPlaylistData, 'api/playlistroutes');
+    console.log('htmlRoutes/playlistroutes');
     // res.status(200).json(dbPlaylistData);
     const tracks = dbPlaylistData.map((track) => ({
       id: track.id,
@@ -39,6 +39,28 @@ router.get('/playlist', async (req, res) => {
     });
   } catch (err) {
     console.log('hello, but in error form');
+    res.status(500).json(err);
+  }
+});
+
+router.delete('/playlist/:id', async (req, res) => {
+  try {
+    console.info(
+      `${req.method} request received to delete song from your playlist`
+    );
+    console.log(req.params);
+    const deleteSongData = await Song.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!deleteSongData) {
+      res.status(404).json({ message: 'No song found with this id!' });
+      return;
+    }
+    res.status(200).json(deleteSongData);
+    // window.location.replace('/playlist');
+  } catch (err) {
     res.status(500).json(err);
   }
 });
