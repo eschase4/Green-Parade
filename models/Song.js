@@ -9,6 +9,7 @@ Song.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
     },
 
     songName: {
@@ -17,6 +18,10 @@ Song.init(
     },
 
     artistName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    albumArt: {
       type: DataTypes.STRING,
       allowNull: false,
     },

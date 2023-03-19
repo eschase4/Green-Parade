@@ -1,9 +1,10 @@
 <div class="container">
 <div class="row">
+  <h3>Im Rendering</h3>
 {{!-- needs work below --}}
-{{#each Song}}
+{{#each playlistSongData}}
 <div class="card col-3" style="width: 18rem;">
-  <img src={{this.image}} class="card-img-top" alt="...">
+  <img src={{this.albumArt}} class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title bg-dark">{{this.songName}}</h5>
     <h6 class="card-text bg-dark">{{this.artistName}}</h6>
