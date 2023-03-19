@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const Song = require('../../models');
+const { Song } = require('../../models');
 
 router.post('/playlist', async (req, res) => {
   try {
@@ -7,12 +7,12 @@ router.post('/playlist', async (req, res) => {
       `${req.method} request received to add a new song to your playlist`
     );
     // const songData = Song.findAll({});
-    const { songName, artistName, albumArt } = req.body;
-    const postSongData = {
-      songName,
-      artistName,
-      albumArt,
-    };
+    // const { songName, artistName, albumArt } = req.body;
+    const postSongData = await Song.create({
+      songName: req.body.songName,
+      artistName: req.body.artistName,
+      albumArt: req.body.albumArt,
+    });
     console.log(postSongData);
     // res.render('playlist', {
     //   postSongData,
