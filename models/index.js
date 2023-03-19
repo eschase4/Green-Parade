@@ -19,4 +19,4 @@ Song.belongsToMany(User, {
     model: Playlist,
   },
 });
-module.exports = User;
+module.exports = { User, Song, Playlist };

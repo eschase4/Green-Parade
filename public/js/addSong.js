@@ -7,13 +7,12 @@ async function newSong(e) {
   const albumArt = card.querySelector('#albumArt').getAttribute('src');
   const songName = card.querySelector('#songName').textContent;
   const artistName = card.querySelector('#artistName').textContent;
-  console.log(songName);
   const songObj = {
     albumArt,
     songName,
     artistName,
   };
-  console.log(songObj);
+  console.log(songObj, 'addSong.js');
   fetch('/api/playlist', {
     method: 'POST',
     headers: {
@@ -24,9 +23,7 @@ async function newSong(e) {
 }
 
 addSongBtn.forEach((element) => {
-  //   console.log(element);
   element.addEventListener('click', newSong);
 });
 
-// addSongBtn.addEventListener('click', newSong);
 module.exports = newSong;
