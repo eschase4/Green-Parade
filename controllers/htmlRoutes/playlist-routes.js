@@ -1,32 +1,10 @@
 const router = require('express').Router();
-const { Playlist, Song } = require('../../models');
+const { Song } = require('../../models');
+const { authChecker } = require('../../utils/authChecker');
 
-router.get('/playlist', async (req, res) => {
+router.get('/playlist', authChecker, async (req, res) => {
   try {
-    // console.info(`${req.method} request received to add a review`);
-    // // const songData = Song.findAll({});
-
-    // const { songName, artistName, albumArt } = req.body;
-    // console.log(songName, 'html routes');
-    // const postSongData = {
-    //   songName,
-    //   artistName,
-    //   albumArt,
-    // };
-    // console.log(postSongData, 'html routes ln 59');
-    // // res.status(200).json(postSongData);
-    // res.render('playlist', {
-    //   postSongData,
-    // });
-    const dbPlaylistData = await Song.findAll({
-      // include: [
-      //   {
-      //     model: Song,
-      //   },
-      // ],
-    });
-    console.log('htmlRoutes/playlistroutes');
-    // res.status(200).json(dbPlaylistData);
+    const dbPlaylistData = await Song.findAll();
     const tracks = dbPlaylistData.map((track) => ({
       id: track.id,
       songName: track.songName,
@@ -36,6 +14,28 @@ router.get('/playlist', async (req, res) => {
 
     res.render('playlist', {
       tracks,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log('hello, but in error form');
+    res.status(500).json(err);
+  }
+});
+
+router.post('/playlist', async (req, res) => {
+  try {
+    console.info(
+      `${req.method} request received to add a new song to your playlist`
+    );
+    const postSongData = await Song.create({
+      songId: req.body.id,
+      songName: req.body.songName,
+      artistName: req.body.artistName,
+      albumArt: req.body.albumArt,
+    });
+    console.log(postSongData);
+    res.render('playlist', {
+      postSongData,
     });
   } catch (err) {
     console.log('hello, but in error form');

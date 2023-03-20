@@ -13,7 +13,7 @@ async function newSong(e) {
     artistName,
   };
   console.log(songObj, 'addSong.js');
-  fetch('/api/playlist', {
+  fetch('/playlist', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
