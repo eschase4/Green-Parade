@@ -29,6 +29,7 @@ While making this application we learned a lot about making functional and RESTf
 
 
 
+
 <a name="usage"></a>
 ## Usage
 
@@ -72,3 +73,6 @@ This application was made under the !!!ERASE THIS SECTION!!! license.
 Github: https://github.com/eschase4
 
 My email address is eschase4@gmail.com, feel free to reach out for any questions you may have.
+
+Link to deployed application--- https://enigmatic-island-78855.herokuapp.com/
+
