@@ -12,6 +12,7 @@ router.post('/playlist', async (req, res) => {
       artistName: req.body.artistName,
       albumArt: req.body.albumArt,
     });
+
     res.render('playlist', {
       postSongData,
     });

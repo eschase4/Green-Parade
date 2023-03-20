@@ -33,7 +33,6 @@ router.post('/playlist', async (req, res) => {
       artistName: req.body.artistName,
       albumArt: req.body.albumArt,
     });
-    console.log(postSongData);
     res.render('playlist', {
       postSongData,
     });
@@ -59,7 +58,6 @@ router.delete('/playlist/:id', async (req, res) => {
       return;
     }
     res.status(200).json(deleteSongData);
-    // window.location.replace('/playlist');
   } catch (err) {
     res.status(500).json(err);
   }
