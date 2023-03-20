@@ -20,6 +20,13 @@ async function newSong(e) {
     },
     body: JSON.stringify(songObj),
   });
+  function revealCheck() {
+    const x = card.querySelector('#myDIV');
+    if (x.style.display === 'none') {
+      x.style.display = 'block';
+    }
+  }
+  revealCheck();
 }
 
 addSongBtn.forEach((element) => {

@@ -1,7 +1,8 @@
-<div class="container">
+<div class="container ">
 
 <div class="row">
   <div class="row">
+    {{#if tracks}}
     {{#each tracks}}
     <div class="randomstuff card col-3" style="width: 18rem;">
       <form method="post" id="newSongData">
@@ -15,7 +16,9 @@
       </form>
     </div>
     {{/each}}
-
+    {{else}}
+    <h2 class="text-center tm-5">No songs in current playlist!</h2>
+    {{/if}}
   </div>
 </div>
 
