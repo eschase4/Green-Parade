@@ -32,5 +32,3 @@ async function newSong(e) {
 addSongBtn.forEach((element) => {
   element.addEventListener('click', newSong);
 });
-
-module.exports = newSong;
