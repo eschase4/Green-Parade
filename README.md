@@ -7,4 +7,4 @@ Screenshot of application:
 
 Link to github repo---https://github.com/eschase4/Green-Parade
 
-Link to deployed application--- 
+Link to deployed application--- https://enigmatic-island-78855.herokuapp.com/
