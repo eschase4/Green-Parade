@@ -6,7 +6,6 @@ const { authChecker } = require('../../utils/authChecker');
 router.get('/search/:searchTerm', authChecker, async (req, res) => {
   // authChecker,
   const { searchTerm } = req.params;
-
   const options = {
     method: 'GET',
     url: `https://deezerdevs-deezer.p.rapidapi.com/search`,
