@@ -15,7 +15,7 @@ const sequelize = new Sequelize(
   {
     host: 'localhost',
     dialect: 'mysql',
-    port: process.env.port,
+    port: 3306,
   }
 );
 // }
