@@ -5,4 +5,10 @@ const apiRoutes = require('./apiRoutes');
 router.use('/', htmlRoutes);
 router.use('/api', apiRoutes);
 
+router.get('/', async (req, res) => {
+  res.render('home', {
+    loggedIn: req.session.loggedIn,
+  });
+});
+
 module.exports = router;

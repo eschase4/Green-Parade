@@ -1,17 +1,17 @@
+require('dotenv').config();
 const router = require('express').Router();
 const axios = require('axios');
 const { authChecker } = require('../../utils/authChecker');
 
-router.get('/search/:searchTerm', async (req, res) => {
+router.get('/search/:searchTerm', authChecker, async (req, res) => {
   // authChecker,
   const { searchTerm } = req.params;
-
   const options = {
     method: 'GET',
     url: `https://deezerdevs-deezer.p.rapidapi.com/search`,
     params: { q: `${searchTerm}` },
     headers: {
-      'X-RapidAPI-Key': 'ad5b30d7f0msh951a6816b6e5b25p1e1d8ejsn505eec47fad7',
+      'X-RapidAPI-Key': `${process.env.API_KEY}`,
       'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com',
     },
   };
@@ -27,6 +27,7 @@ router.get('/search/:searchTerm', async (req, res) => {
 
   res.render('search', {
     tracks,
+    loggedIn: req.session.loggedIn,
   });
 });
 

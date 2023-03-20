@@ -1,0 +1,21 @@
+.addSongBtn {
+    width: 10em;
+    height: 5ex;
+    background-color: green;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+
+.addSongBtn:hover {
+    background-color: chartreuse;
+    box-shadow: 10px 10px;
+}
+
+.btn:active {
+    box-shadow: 0 5px grey;
+    transform: translateY(2px);
+    transform: translateX(2px);
+}
