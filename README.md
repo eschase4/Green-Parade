@@ -1,6 +1,6 @@
 # myPlaylist
-    
-        
+
+![Picture of Deployed Application](/assets/Screenshot%20(70).png)        
 
 <a name="description"></a>
 ## Description  
@@ -18,7 +18,6 @@ While making this application we learned a lot about making functional and RESTf
 -[Technologies](#technologies)<br>
 -[Tests](#tests)<br>
 -[Credits](#credits)<br>
--[License](#license)<br>
 
 <a name="installation"></a>
 ## Installation
@@ -33,6 +32,7 @@ While making this application we learned a lot about making functional and RESTf
 ## Usage
 
 After you log in, simply search the name of songs or artists you would like to add to your playlist in the search bar. If you succesfully find a song you'd like to add, press the "add song" button. To see your playlists, click the "see my playlist" button in the upper right hand corner of the screen. If you would like to remove a song, press the remove song button.
+Link to the deployed application: https://enigmatic-island-78855.herokuapp.com/
 
 <a name="contribution"></a>
 ## How To Contribute
@@ -43,6 +43,7 @@ After you log in, simply search the name of songs or artists you would like to a
 ## Technologies
 
 Node.js MySQL, Handlebars, Express.js, Bootstrap, Authchecker, express-session, Sequelize, and Axios.
+Axios was the only npm we had never used prior to this project.
 
 <a name="tests"></a>
 ## Tests
@@ -61,11 +62,6 @@ Siu ho Tsang
 Tyler Wait
     Github: https://github.com/tylerjwait
     Email: tylerjwait@gmail.com
-
-<a name="license"></a>
-## License
-
-This application was made under the !!!ERASE THIS SECTION!!! license.
 
 ## Questions
 
